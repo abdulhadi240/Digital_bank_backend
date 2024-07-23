@@ -1,6 +1,5 @@
 fastapi 
 uvicorn
 anthropic
-base64
 requests
 pillow
