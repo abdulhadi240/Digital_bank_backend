@@ -7,6 +7,7 @@ import base64
 import requests
 from io import BytesIO
 from PIL import Image
+import os
 
 app = FastAPI()
 
@@ -18,9 +19,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+api_key=os.getenv('CLAUDE_API_KEY')  
+print(api_key)
 
 client = Anthropic(
-    api_key='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',  # Ensure the API key is correctly set here
+    api_key=os.getenv('CLAUDE_API_KEY') 
 )
 
 class UserData(BaseModel):
